@@ -1,0 +1,4 @@
+{"ts": 1792565816.186798, "run_id": "dependency_timeout_ai_driven_43", "event": "incident_logged", "reason": "anomaly score 0.172 exceeded threshold 0.126 but no specific cause was supported by diagnostics", "diagnostics": {"anomaly_score": 0.17192587126261438}}
+{"ts": 1792565819.2399979, "run_id": "dependency_timeout_ai_driven_43", "event": "incident_logged", "reason": "anomaly score 0.186 exceeded threshold 0.126 but no specific cause was supported by diagnostics", "diagnostics": {"anomaly_score": 0.1863976456216242}}
+{"ts": 1792565822.3150232, "run_id": "dependency_timeout_ai_driven_43", "event": "executed", "action": "open_circuit_breaker", "reason": "work requests failing/slow for 3 consecutive polls"}
+{"ts": 1792565836.147226, "run_id": "dependency_timeout_ai_driven_43", "event": "executed", "action": "close_circuit_breaker", "reason": "dependency probe succeeded"}

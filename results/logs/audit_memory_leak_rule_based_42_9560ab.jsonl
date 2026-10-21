@@ -1,0 +1,1 @@
+{"ts": 1792561414.4965708, "run_id": "memory_leak_rule_based_42_9560ab", "event": "executed", "action": "restart_worker", "reason": "memory 171.7MB above 150MB for 3 consecutive polls"}

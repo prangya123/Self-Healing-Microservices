@@ -1,0 +1,332 @@
+{
+  "run_record": {
+    "run_id": "container_crash_ai_driven_1_2c757717",
+    "scenario": "container_crash",
+    "condition": "ai_driven",
+    "seed": 1,
+    "workload_config": {
+      "request_rate_per_second": 1.0
+    },
+    "fault_injection_timestamp": 1792560254.760175,
+    "detection_timestamp": 1792560255.8364239,
+    "action_timestamp": 1792560256.2889678,
+    "recovery_timestamp": 1792560259.5286431,
+    "recovery_succeeded": true,
+    "manual_intervention_required": false,
+    "actions_taken": [
+      {
+        "t": 1792560256.2889569,
+        "action": "restart_worker",
+        "reason": "health check unreachable for 2 consecutive polls"
+      }
+    ],
+    "degraded_operation_seconds": 0.0,
+    "n_requests_total": 25,
+    "n_requests_successful": 23,
+    "notes": [
+      "local AI detector trained on 16 warmup rows"
+    ]
+  },
+  "telemetry": [
+    {
+      "t": 0.05036374999326654,
+      "wall_time": 1792560233.599668,
+      "health_reachable": true,
+      "cpu_percent": 3.3,
+      "mem_mb": 57.015625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 41.475791978882626,
+      "work_mode": "normal"
+    },
+    {
+      "t": 1.1046603749855421,
+      "wall_time": 1792560234.65395,
+      "health_reachable": true,
+      "cpu_percent": 2.8,
+      "mem_mb": 62.296875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 28.538624988868833,
+      "work_mode": "normal"
+    },
+    {
+      "t": 2.1734591249842197,
+      "wall_time": 1792560235.722733,
+      "health_reachable": true,
+      "cpu_percent": 1.5,
+      "mem_mb": 63.046875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 21.4176659937948,
+      "work_mode": "normal"
+    },
+    {
+      "t": 3.2296889169956557,
+      "wall_time": 1792560236.778949,
+      "health_reachable": true,
+      "cpu_percent": 1.2,
+      "mem_mb": 63.8125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 27.853959007188678,
+      "work_mode": "normal"
+    },
+    {
+      "t": 4.274069084000075,
+      "wall_time": 1792560237.823315,
+      "health_reachable": true,
+      "cpu_percent": 1.4,
+      "mem_mb": 64.53125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 24.791250005364418,
+      "work_mode": "normal"
+    },
+    {
+      "t": 5.32854225000483,
+      "wall_time": 1792560238.877773,
+      "health_reachable": true,
+      "cpu_percent": 1.4,
+      "mem_mb": 65.28125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 27.442916994914412,
+      "work_mode": "normal"
+    },
+    {
+      "t": 6.36580016699736,
+      "wall_time": 1792560239.915017,
+      "health_reachable": true,
+      "cpu_percent": 1.4,
+      "mem_mb": 65.921875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 16.946999996434897,
+      "work_mode": "normal"
+    },
+    {
+      "t": 7.41349579198868,
+      "wall_time": 1792560240.962698,
+      "health_reachable": true,
+      "cpu_percent": 1.0,
+      "mem_mb": 66.6875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 25.528832979034632,
+      "work_mode": "normal"
+    },
+    {
+      "t": 8.462947708991123,
+      "wall_time": 1792560242.012136,
+      "health_reachable": true,
+      "cpu_percent": 1.4,
+      "mem_mb": 67.40625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 26.036957977339625,
+      "work_mode": "normal"
+    },
+    {
+      "t": 9.516247583989752,
+      "wall_time": 1792560243.065421,
+      "health_reachable": true,
+      "cpu_percent": 1.4,
+      "mem_mb": 68.03125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 27.633666002657264,
+      "work_mode": "normal"
+    },
+    {
+      "t": 10.561877000000095,
+      "wall_time": 1792560244.1110358,
+      "health_reachable": true,
+      "cpu_percent": 1.5,
+      "mem_mb": 68.78125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 25.95654100878164,
+      "work_mode": "normal"
+    },
+    {
+      "t": 11.605761749990052,
+      "wall_time": 1792560245.154907,
+      "health_reachable": true,
+      "cpu_percent": 1.4,
+      "mem_mb": 69.515625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 25.14145799796097,
+      "work_mode": "normal"
+    },
+    {
+      "t": 12.652573416999076,
+      "wall_time": 1792560246.201704,
+      "health_reachable": true,
+      "cpu_percent": 1.4,
+      "mem_mb": 70.265625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 26.713208004366606,
+      "work_mode": "normal"
+    },
+    {
+      "t": 13.699011208984302,
+      "wall_time": 1792560247.248127,
+      "health_reachable": true,
+      "cpu_percent": 1.4,
+      "mem_mb": 70.9375,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 26.397125009680167,
+      "work_mode": "normal"
+    },
+    {
+      "t": 14.75102766699274,
+      "wall_time": 1792560248.300129,
+      "health_reachable": true,
+      "cpu_percent": 1.4,
+      "mem_mb": 71.640625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 27.334207989042625,
+      "work_mode": "normal"
+    },
+    {
+      "t": 15.824613499979023,
+      "wall_time": 1792560249.373701,
+      "health_reachable": true,
+      "cpu_percent": 1.5,
+      "mem_mb": 57.234375,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 33.65737499552779,
+      "work_mode": "normal"
+    },
+    {
+      "t": 16.898078708996763,
+      "wall_time": 1792560250.4471512,
+      "health_reachable": true,
+      "cpu_percent": 1.6,
+      "mem_mb": 58.328125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 28.230708005139604,
+      "work_mode": "normal"
+    },
+    {
+      "t": 17.94539220898878,
+      "wall_time": 1792560251.4944499,
+      "health_reachable": true,
+      "cpu_percent": 1.4,
+      "mem_mb": 59.046875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 19.329583999933675,
+      "work_mode": "normal"
+    },
+    {
+      "t": 19.013505084003555,
+      "wall_time": 1792560252.562548,
+      "health_reachable": true,
+      "cpu_percent": 1.2,
+      "mem_mb": 59.75,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 33.09233399340883,
+      "work_mode": "normal"
+    },
+    {
+      "t": 20.080665958987083,
+      "wall_time": 1792560253.629695,
+      "health_reachable": true,
+      "cpu_percent": 1.6,
+      "mem_mb": 60.40625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 32.75762501289137,
+      "work_mode": "normal"
+    },
+    {
+      "t": 21.229978333984036,
+      "wall_time": 1792560254.7789912,
+      "health_reachable": false,
+      "cpu_percent": null,
+      "mem_mb": null,
+      "circuit_breaker_open": null,
+      "leaked_mb": null,
+      "work_success": false,
+      "work_latency_ms": 7.309540989808738,
+      "work_mode": null
+    },
+    {
+      "t": 22.287408042000607,
+      "wall_time": 1792560255.836407,
+      "health_reachable": false,
+      "cpu_percent": null,
+      "mem_mb": null,
+      "circuit_breaker_open": null,
+      "leaked_mb": null,
+      "work_success": false,
+      "work_latency_ms": 18.186291999882087,
+      "work_mode": null
+    },
+    {
+      "t": 23.840348999976413,
+      "wall_time": 1792560257.389326,
+      "health_reachable": true,
+      "cpu_percent": 0.2,
+      "mem_mb": 56.96875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 62.052707973634824,
+      "work_mode": "normal"
+    },
+    {
+      "t": 24.908095416991273,
+      "wall_time": 1792560258.457058,
+      "health_reachable": true,
+      "cpu_percent": 3.1,
+      "mem_mb": 62.296875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 37.09825000260025,
+      "work_mode": "normal"
+    },
+    {
+      "t": 25.977255541976774,
+      "wall_time": 1792560259.526203,
+      "health_reachable": true,
+      "cpu_percent": 1.8,
+      "mem_mb": 63.0625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 32.57129099802114,
+      "work_mode": "normal"
+    }
+  ]
+}

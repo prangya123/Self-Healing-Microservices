@@ -1,0 +1,10 @@
+{"ts": 1792559953.1672142, "run_id": "test_dry_run", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792560215.6459289, "run_id": "test_dry_run", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792561408.545821, "run_id": "test_dry_run", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792562138.63057, "run_id": "test_dry_run", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792563114.7740119, "run_id": "test_dry_run", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792563323.3049889, "run_id": "test_dry_run", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792566004.005894, "run_id": "test_dry_run", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792566034.756892, "run_id": "test_dry_run", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792566247.2118988, "run_id": "test_dry_run", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792566387.013289, "run_id": "test_dry_run", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}

@@ -1,0 +1,23 @@
+{
+  "dataset_name": "microsoft",
+  "n_test_rows": 123,
+  "threshold": 0.13988117461341332,
+  "precision": 0.7534246575342466,
+  "recall": 0.9166666666666666,
+  "f1": 0.8270676691729323,
+  "false_positive_rate": 0.2857142857142857,
+  "false_alarms_per_hour": 0.14754098360655737,
+  "roc_auc": 0.9134920634920634,
+  "pr_auc": 0.9433881088650113,
+  "confusion_matrix": [
+    [
+      45,
+      18
+    ],
+    [
+      5,
+      55
+    ]
+  ],
+  "notes": []
+}

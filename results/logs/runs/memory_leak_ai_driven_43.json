@@ -1,0 +1,525 @@
+{
+  "run_record": {
+    "run_id": "memory_leak_ai_driven_43",
+    "scenario": "memory_leak",
+    "condition": "ai_driven",
+    "seed": 43,
+    "workload_config": {
+      "request_rate_per_second": 1.0
+    },
+    "fault_injection_timestamp": 1792565741.0465379,
+    "detection_timestamp": 1792565741.0994382,
+    "action_timestamp": 1792565753.0946822,
+    "recovery_timestamp": 1792565756.246988,
+    "recovery_succeeded": true,
+    "manual_intervention_required": false,
+    "actions_taken": [
+      {
+        "t": 1792565741.100806,
+        "action": "log_incident",
+        "reason": "anomaly score 0.212 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565742.1450398,
+        "action": "log_incident",
+        "reason": "anomaly score 0.202 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565743.1908422,
+        "action": "log_incident",
+        "reason": "anomaly score 0.203 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565744.238399,
+        "action": "log_incident",
+        "reason": "anomaly score 0.202 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565745.285595,
+        "action": "log_incident",
+        "reason": "anomaly score 0.215 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565746.335279,
+        "action": "log_incident",
+        "reason": "anomaly score 0.214 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565747.38349,
+        "action": "log_incident",
+        "reason": "anomaly score 0.218 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565748.4322932,
+        "action": "log_incident",
+        "reason": "anomaly score 0.200 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565749.477206,
+        "action": "log_incident",
+        "reason": "anomaly score 0.207 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565750.5244522,
+        "action": "log_incident",
+        "reason": "anomaly score 0.197 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565751.580734,
+        "action": "log_incident",
+        "reason": "anomaly score 0.214 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565753.094676,
+        "action": "restart_worker",
+        "reason": "memory 166.9MB above 150MB for 3 consecutive polls"
+      },
+      {
+        "t": 1792565754.149878,
+        "action": "log_incident",
+        "reason": "anomaly score 0.218 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565755.1968691,
+        "action": "log_incident",
+        "reason": "anomaly score 0.229 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      },
+      {
+        "t": 1792565756.246973,
+        "action": "log_incident",
+        "reason": "anomaly score 0.226 exceeded threshold 0.126 but no specific cause was supported by diagnostics"
+      }
+    ],
+    "degraded_operation_seconds": 0.0,
+    "n_requests_total": 30,
+    "n_requests_successful": 30,
+    "controller_decision_latency_ms_mean": 4.503483334944273,
+    "anomaly_score_trace": [
+      {
+        "t": 1792565741.0994382,
+        "score": 0.21192462923588196
+      },
+      {
+        "t": 1792565742.144832,
+        "score": 0.2024405286606482
+      },
+      {
+        "t": 1792565743.190583,
+        "score": 0.2028043029169574
+      },
+      {
+        "t": 1792565744.238081,
+        "score": 0.2024405286606482
+      },
+      {
+        "t": 1792565745.2852612,
+        "score": 0.21455755803594523
+      },
+      {
+        "t": 1792565746.33499,
+        "score": 0.214074261685132
+      },
+      {
+        "t": 1792565747.383191,
+        "score": 0.21832160984047366
+      },
+      {
+        "t": 1792565748.431971,
+        "score": 0.20011457120115805
+      },
+      {
+        "t": 1792565749.476896,
+        "score": 0.20679753233169795
+      },
+      {
+        "t": 1792565750.524192,
+        "score": 0.19702560085166965
+      },
+      {
+        "t": 1792565751.580458,
+        "score": 0.21359129221542172
+      },
+      {
+        "t": 1792565752.642711,
+        "score": 0.2025559497567464
+      },
+      {
+        "t": 1792565754.14961,
+        "score": 0.2175193612549602
+      },
+      {
+        "t": 1792565755.196617,
+        "score": 0.22856214854197432
+      },
+      {
+        "t": 1792565756.246665,
+        "score": 0.22565230868977015
+      }
+    ],
+    "notes": [
+      "using fixed local AI detector trained on 336 rows pooled across 4 independent normal-operation sessions"
+    ]
+  },
+  "telemetry": [
+    {
+      "t": 0.024982083006761968,
+      "wall_time": 1792565725.424934,
+      "health_reachable": true,
+      "cpu_percent": 4.1,
+      "mem_mb": 61.46875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 15.968583000358194,
+      "work_mode": "normal"
+    },
+    {
+      "t": 1.0540937909972854,
+      "wall_time": 1792565726.4540548,
+      "health_reachable": true,
+      "cpu_percent": 0.8,
+      "mem_mb": 62.3125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 9.314666007412598,
+      "work_mode": "normal"
+    },
+    {
+      "t": 2.0976487080042716,
+      "wall_time": 1792565727.4976199,
+      "health_reachable": true,
+      "cpu_percent": 0.2,
+      "mem_mb": 62.3125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 11.83050000690855,
+      "work_mode": "normal"
+    },
+    {
+      "t": 3.137893166014692,
+      "wall_time": 1792565728.537874,
+      "health_reachable": true,
+      "cpu_percent": 0.2,
+      "mem_mb": 62.3125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 13.932915986515582,
+      "work_mode": "normal"
+    },
+    {
+      "t": 4.177440458006458,
+      "wall_time": 1792565729.577431,
+      "health_reachable": true,
+      "cpu_percent": 0.2,
+      "mem_mb": 62.3125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 17.533542006276548,
+      "work_mode": "normal"
+    },
+    {
+      "t": 5.217250290996162,
+      "wall_time": 1792565730.61725,
+      "health_reachable": true,
+      "cpu_percent": 0.2,
+      "mem_mb": 62.296875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 9.825541987083852,
+      "work_mode": "normal"
+    },
+    {
+      "t": 6.257734415994491,
+      "wall_time": 1792565731.6577432,
+      "health_reachable": true,
+      "cpu_percent": 0.3,
+      "mem_mb": 62.328125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 13.264874985907227,
+      "work_mode": "normal"
+    },
+    {
+      "t": 7.301411666005151,
+      "wall_time": 1792565732.70143,
+      "health_reachable": true,
+      "cpu_percent": 0.2,
+      "mem_mb": 62.359375,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 9.743875009007752,
+      "work_mode": "normal"
+    },
+    {
+      "t": 8.35173404100351,
+      "wall_time": 1792565733.751762,
+      "health_reachable": true,
+      "cpu_percent": 0.2,
+      "mem_mb": 62.375,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 11.56641700072214,
+      "work_mode": "normal"
+    },
+    {
+      "t": 9.395803749997867,
+      "wall_time": 1792565734.795842,
+      "health_reachable": true,
+      "cpu_percent": 0.2,
+      "mem_mb": 62.375,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 11.501833010697737,
+      "work_mode": "normal"
+    },
+    {
+      "t": 10.440209583000978,
+      "wall_time": 1792565735.840257,
+      "health_reachable": true,
+      "cpu_percent": 0.2,
+      "mem_mb": 62.375,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 9.871457994449884,
+      "work_mode": "normal"
+    },
+    {
+      "t": 11.478691333002644,
+      "wall_time": 1792565736.878748,
+      "health_reachable": true,
+      "cpu_percent": 0.2,
+      "mem_mb": 62.375,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 9.567541012074798,
+      "work_mode": "normal"
+    },
+    {
+      "t": 12.52101720799692,
+      "wall_time": 1792565737.921084,
+      "health_reachable": true,
+      "cpu_percent": 0.3,
+      "mem_mb": 62.390625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 10.989707981934771,
+      "work_mode": "normal"
+    },
+    {
+      "t": 13.562538416008465,
+      "wall_time": 1792565738.962614,
+      "health_reachable": true,
+      "cpu_percent": 0.3,
+      "mem_mb": 62.390625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 9.625542006688192,
+      "work_mode": "normal"
+    },
+    {
+      "t": 14.605007416015724,
+      "wall_time": 1792565740.005093,
+      "health_reachable": true,
+      "cpu_percent": 0.3,
+      "mem_mb": 62.40625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 17.50370900845155,
+      "work_mode": "normal"
+    },
+    {
+      "t": 15.694702290988062,
+      "wall_time": 1792565741.094798,
+      "health_reachable": true,
+      "cpu_percent": 3.0,
+      "mem_mb": 78.515625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 8.0,
+      "work_success": true,
+      "work_latency_ms": 9.42300001042895,
+      "work_mode": "normal"
+    },
+    {
+      "t": 16.740675415989244,
+      "wall_time": 1792565742.1407812,
+      "health_reachable": true,
+      "cpu_percent": 4.5,
+      "mem_mb": 86.5625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 16.0,
+      "work_success": true,
+      "work_latency_ms": 9.761666995473206,
+      "work_mode": "normal"
+    },
+    {
+      "t": 17.786521291011013,
+      "wall_time": 1792565743.186636,
+      "health_reachable": true,
+      "cpu_percent": 4.3,
+      "mem_mb": 94.59375,
+      "circuit_breaker_open": false,
+      "leaked_mb": 24.0,
+      "work_success": true,
+      "work_latency_ms": 9.248708025552332,
+      "work_mode": "normal"
+    },
+    {
+      "t": 18.83394412501366,
+      "wall_time": 1792565744.234069,
+      "health_reachable": true,
+      "cpu_percent": 4.5,
+      "mem_mb": 102.640625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 32.0,
+      "work_success": true,
+      "work_latency_ms": 9.670833998825401,
+      "work_mode": "normal"
+    },
+    {
+      "t": 19.881212915992364,
+      "wall_time": 1792565745.281347,
+      "health_reachable": true,
+      "cpu_percent": 4.7,
+      "mem_mb": 110.671875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 40.0,
+      "work_success": true,
+      "work_latency_ms": 9.524666995275766,
+      "work_mode": "normal"
+    },
+    {
+      "t": 20.930833541002357,
+      "wall_time": 1792565746.330977,
+      "health_reachable": true,
+      "cpu_percent": 4.9,
+      "mem_mb": 118.703125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 48.0,
+      "work_success": true,
+      "work_latency_ms": 9.172374993795529,
+      "work_mode": "normal"
+    },
+    {
+      "t": 21.979152457992313,
+      "wall_time": 1792565747.379306,
+      "health_reachable": true,
+      "cpu_percent": 4.6,
+      "mem_mb": 126.75,
+      "circuit_breaker_open": false,
+      "leaked_mb": 56.0,
+      "work_success": true,
+      "work_latency_ms": 9.369292005430907,
+      "work_mode": "normal"
+    },
+    {
+      "t": 23.027506915997947,
+      "wall_time": 1792565748.42767,
+      "health_reachable": true,
+      "cpu_percent": 4.6,
+      "mem_mb": 134.796875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 64.0,
+      "work_success": true,
+      "work_latency_ms": 10.268415993778035,
+      "work_mode": "normal"
+    },
+    {
+      "t": 24.072655458003283,
+      "wall_time": 1792565749.472828,
+      "health_reachable": true,
+      "cpu_percent": 4.5,
+      "mem_mb": 142.828125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 72.0,
+      "work_success": true,
+      "work_latency_ms": 9.53383301384747,
+      "work_mode": "normal"
+    },
+    {
+      "t": 25.120069166005123,
+      "wall_time": 1792565750.5202508,
+      "health_reachable": true,
+      "cpu_percent": 4.5,
+      "mem_mb": 150.859375,
+      "circuit_breaker_open": false,
+      "leaked_mb": 80.0,
+      "work_success": true,
+      "work_latency_ms": 9.381833020597696,
+      "work_mode": "normal"
+    },
+    {
+      "t": 26.176269666000735,
+      "wall_time": 1792565751.576461,
+      "health_reachable": true,
+      "cpu_percent": 5.5,
+      "mem_mb": 158.90625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 88.0,
+      "work_success": true,
+      "work_latency_ms": 9.162667003693059,
+      "work_mode": "normal"
+    },
+    {
+      "t": 27.233561791013926,
+      "wall_time": 1792565752.633763,
+      "health_reachable": true,
+      "cpu_percent": 5.5,
+      "mem_mb": 166.9375,
+      "circuit_breaker_open": false,
+      "leaked_mb": 96.0,
+      "work_success": true,
+      "work_latency_ms": 9.12787500419654,
+      "work_mode": "normal"
+    },
+    {
+      "t": 28.744676916016033,
+      "wall_time": 1792565754.144892,
+      "health_reachable": true,
+      "cpu_percent": 0.2,
+      "mem_mb": 61.40625,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 21.473458007676527,
+      "work_mode": "normal"
+    },
+    {
+      "t": 29.792037125007482,
+      "wall_time": 1792565755.192262,
+      "health_reachable": true,
+      "cpu_percent": 0.8,
+      "mem_mb": 62.296875,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 20.812958013266325,
+      "work_mode": "normal"
+    },
+    {
+      "t": 30.84161058301106,
+      "wall_time": 1792565756.241845,
+      "health_reachable": true,
+      "cpu_percent": 0.3,
+      "mem_mb": 62.328125,
+      "circuit_breaker_open": false,
+      "leaked_mb": 0.0,
+      "work_success": true,
+      "work_latency_ms": 11.364832986146212,
+      "work_mode": "normal"
+    }
+  ]
+}

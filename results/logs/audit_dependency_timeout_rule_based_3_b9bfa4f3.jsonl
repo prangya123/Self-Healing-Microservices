@@ -1,0 +1,2 @@
+{"ts": 1792560873.4157782, "run_id": "dependency_timeout_rule_based_3_b9bfa4f3", "event": "executed", "action": "open_circuit_breaker", "reason": "work requests failing/slow for 3 consecutive polls"}
+{"ts": 1792560887.302638, "run_id": "dependency_timeout_rule_based_3_b9bfa4f3", "event": "executed", "action": "close_circuit_breaker", "reason": "dependency probe succeeded"}

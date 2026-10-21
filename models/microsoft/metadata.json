@@ -1,0 +1,44 @@
+{
+  "dataset_identifier": "microsoft",
+  "feature_names": [
+    "Value",
+    "Value__lag1",
+    "Value__lag3",
+    "Value__lag5",
+    "Value__roll_mean5",
+    "Value__roll_std5",
+    "Value__roll_mean15",
+    "Value__roll_std15",
+    "Value__rate_of_change"
+  ],
+  "random_seed": 42,
+  "training_config": {
+    "n_estimators": 200,
+    "max_samples": "auto",
+    "contamination": "auto",
+    "random_state": 42
+  },
+  "threshold": {
+    "method": "validation_f1_grid_search",
+    "candidate_percentiles": [
+      80,
+      85,
+      90,
+      92,
+      95,
+      97,
+      98,
+      99
+    ],
+    "chosen_percentile": 90.0,
+    "chosen_threshold": 0.13988117461341332,
+    "chosen_val_f1": 0.72,
+    "val_has_labels": true
+  },
+  "train_rows": 409,
+  "val_rows": 121,
+  "test_rows": 123,
+  "train_anomaly_fraction": 0.0,
+  "model_type": "sklearn.ensemble.IsolationForest",
+  "temporal_context_method": "engineered lag/rolling/rate-of-change features, NOT a sequence model"
+}

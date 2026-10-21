@@ -1,0 +1,186 @@
+# Central configuration for the self-healing dissertation pipeline.
+# No experimental result in this project should require editing code --
+# all tunables that affect reported numbers live here.
+
+random_seed: 42
+
+paths:
+  data_root: "../data"
+  microsoft_csv: "../data/cloud_monitoring_sample.csv"
+  kaggle_csv: "../data/kaggle_cloud_resource_usage.csv"
+  aws_cloudwatch_dir: "../data/aws_cloudwatch_metrics"
+  results_tables: "results/tables"
+  results_figures: "results/figures"
+  results_logs: "results/logs"
+  results_reports: "results/reports"
+  models_dir: "models"
+
+datasets:
+  # Role of each source is documented in results/reports/dataset_inspection_report.md
+  # and data_dictionary/data_dictionary.md. Sources are evaluated SEPARATELY;
+  # no cross-dataset model transfer is performed because feature spaces differ.
+  microsoft:
+    role: "univariate anomaly-detection benchmark (labeled, generic anomaly only)"
+    has_labels: true
+    label_col: "Label"
+    timestamp_col: "TimeStamp"
+    value_cols: ["Value"]
+    native_interval: "1h"
+  kaggle:
+    role: "multivariate resource-anomaly benchmark and feature development (labeled, generic anomaly only)"
+    has_labels: true
+    label_col: "anomaly"
+    timestamp_col: "time"
+    value_cols:
+      - "node_cpu_utilization|Average|node1"
+      - "node_cpu_utilization|Average|node2"
+      - "pod_memory_utilization|Average|carts-db"
+      - "pod_network_rx_bytes|Average|user"
+      - "carts_req_rate"
+      - "user_req_rate"
+      - "orders_perc95_rt"
+      - "front-end_perc95_rt"
+    native_interval: "1min"
+  aws_cloudwatch:
+    # Confirmed with user 2026-10-20: these files match the public NAB
+    # "realAWSCloudwatch" benchmark, not a fresh export from the user's own
+    # environment, and ship with no label file. Treated as an UNLABELED
+    # public benchmark: used only for descriptive profiling / unsupervised
+    # scoring, never for precision/recall/F1 claims.
+    role: "unlabeled public benchmark (NAB realAWSCloudwatch) - descriptive/offline profiling only"
+    has_labels: false
+    label_col: null
+    timestamp_col: "timestamp"
+    value_cols: ["value"]
+    native_interval: "5min"
+
+preprocessing:
+  preserve_raw: true  # never overwrite files under paths.data_root
+  timezone: "UTC"
+  duplicate_policy: "drop_exact_duplicates_keep_first"
+  resample: false  # only resample if a documented reason requires it; default off
+  max_gap_multiplier_before_flag: 1.5  # gaps > this x the modal interval are flagged, not interpolated
+  lags: [1, 3, 5]
+  rolling_windows: [5, 15]
+  splits:
+    train_frac: 0.6
+    val_frac: 0.2
+    test_frac: 0.2
+    # rows within this many steps of a split boundary are dropped so that
+    # lag/rolling windows never read across the boundary (no leakage).
+    boundary_guard_steps: 15
+
+model:
+  isolation_forest:
+    n_estimators: 200
+    max_samples: "auto"
+    contamination: "auto"
+    random_state: 42
+  threshold_selection:
+    # threshold is chosen on validation data ONLY, then frozen before test evaluation
+    metric: "f1"
+    candidate_percentiles: [80, 85, 90, 92, 95, 97, 98, 99]
+  local_app_detector:
+    # Separate feature space from the offline datasets, so a separate model
+    # is trained here rather than reusing microsoft/kaggle models
+    # (Section 3/8). No fault labels exist for this telemetry (it is
+    # collected before any fault is ever injected), so the threshold is a
+    # percentile of the model's own training scores, not F1-tuned -- this
+    # is disclosed as a methodological difference from the offline detectors.
+    #
+    # IMPORTANT (revised after the first experiment batch, 2026-10-20): this
+    # model is now trained ONCE, offline, on a larger pooled corpus of
+    # normal-operation telemetry (src/controllers/collect_normal_telemetry.py)
+    # and reused (frozen) across all experiment runs -- exactly like the
+    # Microsoft/Kaggle detectors are trained once and reused for evaluation.
+    # The original per-run design (retrain from scratch on each run's own
+    # ~20s/16-row warmup) was measurably unreliable: in one memory_leak run
+    # the detector's score trended DOWN throughout a real, growing leak
+    # because its tiny training sample happened to include a rising-RSS
+    # process-startup transient that looked indistinguishable from the leak
+    # itself. See results/reports/limitations_report.md item 8 and
+    # dissertation_results_summary.md for the measured evidence.
+    n_estimators: 100
+    lookback_window: 5
+    threshold_percentile: 99
+    random_state: 42
+    # Used only by collect_normal_telemetry.py when (re)building the fixed
+    # corpus model -- NOT used per-run during experiments.
+    training_sessions: 4
+    training_session_seconds: 90
+    # Used per-run, only to fill the live feature-history buffer (lag/rolling
+    # windows) before scoring can start. No training happens from this.
+    # (RSS now stabilizes within ~3s after the httpx-client-reuse fix in
+    # main_service.py; 15s leaves a safety margin.)
+    live_warmup_seconds: 15
+
+controller_thresholds:
+  health_fail_streak: 2
+  mem_mb_threshold: 150
+  mem_fail_streak: 3
+  dependency_fail_streak: 3
+  latency_threshold_ms: 1000
+
+application:
+  host: "127.0.0.1"
+  app_port: 8001
+  dependency_port: 8002
+  telemetry_interval_seconds: 1.0
+  workload:
+    request_rate_per_second: 5
+    jitter_fraction: 0.2
+
+fault_scenarios:
+  # Scope restricted to these three per dissertation scope (Section 4).
+  # CPU saturation / network latency injection are explicitly OUT of scope.
+  - name: "container_crash"
+    enabled: true
+  - name: "memory_leak"
+    enabled: true
+    max_allocation_mb: 256
+    allocation_step_mb: 8
+    allocation_interval_seconds: 1.0
+    # total process RSS (mem_mb) at which the app is treated as genuinely
+    # unhealthy (simulated resource exhaustion from an unmitigated leak).
+    # Must stay below the baseline mem_mb + max_allocation_mb ceiling.
+    hard_failure_mem_mb: 220
+  - name: "dependency_timeout"
+    enabled: true
+    injected_delay_seconds: 2.5
+    failure_rate: 1.0
+    # after this long, the dependency is assumed to recover on its own
+    # (models a transient downstream outage clearing); this bounds the
+    # experiment and lets "verified recovery" be reachable within max_wait_seconds
+    duration_seconds: 20
+
+recovery:
+  # A run counts as recovered only once this sequence succeeds, not merely
+  # once a restart process exits.
+  consecutive_successful_health_checks_required: 3
+  consecutive_successful_work_requests_required: 3
+  health_check_interval_seconds: 1.0
+  max_wait_seconds: 60
+
+safety:
+  dry_run_default: true          # remediation is DRY RUN unless explicitly overridden
+  enable_real_actions: false      # must be explicitly set true to allow real local actions
+  service_allowlist: ["demo_app_worker"]
+  action_cooldown_seconds: 10
+  max_actions_per_run: 10
+  max_restarts_per_run: 3
+  execution_timeout_seconds: 15
+  stop_switch_file: "results/logs/STOP"
+  aws_access: "read_only_optional"  # never modify live AWS infrastructure
+
+experiments:
+  conditions: ["baseline", "rule_based", "ai_driven"]
+  smoke_test_repeats: 3
+  full_repeats: 20  # configurable; smoke test is NOT a statistical evaluation
+  scenarios: ["container_crash", "memory_leak", "dependency_timeout"]
+
+visualization:
+  condition_colors:
+    baseline: "#E69F00"     # orange
+    rule_based: "#0072B2"   # blue
+    ai_driven: "#009E73"    # green
+  heatmap_scenarios: ["container_crash", "memory_leak", "dependency_timeout"]

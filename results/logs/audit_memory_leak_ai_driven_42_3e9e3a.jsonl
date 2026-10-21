@@ -1,0 +1,4 @@
+{"ts": 1792561487.100311, "run_id": "memory_leak_ai_driven_42_3e9e3a", "event": "incident_logged", "reason": "anomaly score 0.058 exceeded threshold 0.053 but no specific cause was supported by diagnostics", "diagnostics": {"anomaly_score": 0.05751662268871238}}
+{"ts": 1792561503.37452, "run_id": "memory_leak_ai_driven_42_3e9e3a", "event": "executed", "action": "restart_worker", "reason": "memory 155.5MB above 150MB for 5 consecutive polls"}
+{"ts": 1792561504.462311, "run_id": "memory_leak_ai_driven_42_3e9e3a", "event": "incident_logged", "reason": "anomaly score 0.107 exceeded threshold 0.053 but no specific cause was supported by diagnostics", "diagnostics": {"anomaly_score": 0.10660456206499502}}
+{"ts": 1792561505.517982, "run_id": "memory_leak_ai_driven_42_3e9e3a", "event": "incident_logged", "reason": "anomaly score 0.054 exceeded threshold 0.053 but no specific cause was supported by diagnostics", "diagnostics": {"anomaly_score": 0.05352290987087094}}

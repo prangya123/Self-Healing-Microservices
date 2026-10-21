@@ -1,0 +1,10 @@
+{"ts": 1792559953.167829, "run_id": "test_allowlist", "event": "blocked_not_allowlisted", "service": "not_a_real_service", "action": "restart_worker"}
+{"ts": 1792560215.646613, "run_id": "test_allowlist", "event": "blocked_not_allowlisted", "service": "not_a_real_service", "action": "restart_worker"}
+{"ts": 1792561408.547178, "run_id": "test_allowlist", "event": "blocked_not_allowlisted", "service": "not_a_real_service", "action": "restart_worker"}
+{"ts": 1792562138.6316092, "run_id": "test_allowlist", "event": "blocked_not_allowlisted", "service": "not_a_real_service", "action": "restart_worker"}
+{"ts": 1792563114.77473, "run_id": "test_allowlist", "event": "blocked_not_allowlisted", "service": "not_a_real_service", "action": "restart_worker"}
+{"ts": 1792563323.305685, "run_id": "test_allowlist", "event": "blocked_not_allowlisted", "service": "not_a_real_service", "action": "restart_worker"}
+{"ts": 1792566004.006662, "run_id": "test_allowlist", "event": "blocked_not_allowlisted", "service": "not_a_real_service", "action": "restart_worker"}
+{"ts": 1792566034.7575612, "run_id": "test_allowlist", "event": "blocked_not_allowlisted", "service": "not_a_real_service", "action": "restart_worker"}
+{"ts": 1792566247.212654, "run_id": "test_allowlist", "event": "blocked_not_allowlisted", "service": "not_a_real_service", "action": "restart_worker"}
+{"ts": 1792566387.014011, "run_id": "test_allowlist", "event": "blocked_not_allowlisted", "service": "not_a_real_service", "action": "restart_worker"}

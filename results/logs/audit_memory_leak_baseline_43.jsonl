@@ -1,0 +1,1 @@
+{"ts": 1792562730.894145, "run_id": "memory_leak_baseline_43", "event": "executed", "action": "restart_worker", "reason": "default health check unreachable for 1 consecutive polls"}

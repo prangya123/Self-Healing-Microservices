@@ -1,0 +1,1 @@
+{"ts": 1792561142.011302, "run_id": "container_crash_rule_based_43_6d55f0", "event": "executed", "action": "restart_worker", "reason": "health check unreachable for 2 consecutive polls"}

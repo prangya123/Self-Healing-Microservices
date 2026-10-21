@@ -1,0 +1,10 @@
+{"ts": 1792559953.168994, "run_id": "test_stop_switch", "event": "blocked_stop_switch", "action": "restart_worker", "reason": "test"}
+{"ts": 1792560215.647842, "run_id": "test_stop_switch", "event": "blocked_stop_switch", "action": "restart_worker", "reason": "test"}
+{"ts": 1792561408.548866, "run_id": "test_stop_switch", "event": "blocked_stop_switch", "action": "restart_worker", "reason": "test"}
+{"ts": 1792562138.632936, "run_id": "test_stop_switch", "event": "blocked_stop_switch", "action": "restart_worker", "reason": "test"}
+{"ts": 1792563114.776153, "run_id": "test_stop_switch", "event": "blocked_stop_switch", "action": "restart_worker", "reason": "test"}
+{"ts": 1792563323.3071842, "run_id": "test_stop_switch", "event": "blocked_stop_switch", "action": "restart_worker", "reason": "test"}
+{"ts": 1792566004.008239, "run_id": "test_stop_switch", "event": "blocked_stop_switch", "action": "restart_worker", "reason": "test"}
+{"ts": 1792566034.758904, "run_id": "test_stop_switch", "event": "blocked_stop_switch", "action": "restart_worker", "reason": "test"}
+{"ts": 1792566247.214132, "run_id": "test_stop_switch", "event": "blocked_stop_switch", "action": "restart_worker", "reason": "test"}
+{"ts": 1792566387.015527, "run_id": "test_stop_switch", "event": "blocked_stop_switch", "action": "restart_worker", "reason": "test"}

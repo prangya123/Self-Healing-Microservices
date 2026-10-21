@@ -1,0 +1,20 @@
+{"ts": 1792559953.168343, "run_id": "test_max_actions", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792559953.1684322, "run_id": "test_max_actions", "event": "blocked_max_actions_per_run", "action": "restart_worker"}
+{"ts": 1792560215.6471858, "run_id": "test_max_actions", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792560215.6473129, "run_id": "test_max_actions", "event": "blocked_max_actions_per_run", "action": "restart_worker"}
+{"ts": 1792561408.547924, "run_id": "test_max_actions", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792561408.548159, "run_id": "test_max_actions", "event": "blocked_max_actions_per_run", "action": "restart_worker"}
+{"ts": 1792562138.6322439, "run_id": "test_max_actions", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792562138.632391, "run_id": "test_max_actions", "event": "blocked_max_actions_per_run", "action": "restart_worker"}
+{"ts": 1792563114.77535, "run_id": "test_max_actions", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792563114.7755089, "run_id": "test_max_actions", "event": "blocked_max_actions_per_run", "action": "restart_worker"}
+{"ts": 1792563323.3063412, "run_id": "test_max_actions", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792563323.306481, "run_id": "test_max_actions", "event": "blocked_max_actions_per_run", "action": "restart_worker"}
+{"ts": 1792566004.007432, "run_id": "test_max_actions", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792566004.0076191, "run_id": "test_max_actions", "event": "blocked_max_actions_per_run", "action": "restart_worker"}
+{"ts": 1792566034.758063, "run_id": "test_max_actions", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792566034.7581902, "run_id": "test_max_actions", "event": "blocked_max_actions_per_run", "action": "restart_worker"}
+{"ts": 1792566247.2133162, "run_id": "test_max_actions", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792566247.213482, "run_id": "test_max_actions", "event": "blocked_max_actions_per_run", "action": "restart_worker"}
+{"ts": 1792566387.014671, "run_id": "test_max_actions", "event": "dry_run_skipped", "action": "restart_worker", "reason": "test", "diagnostics": {}}
+{"ts": 1792566387.0148082, "run_id": "test_max_actions", "event": "blocked_max_actions_per_run", "action": "restart_worker"}

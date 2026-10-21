@@ -1,0 +1,34 @@
+# Optional containerized deployment of the two application processes.
+# NOT executed or verified in the development sandbox used to build this
+# project (no Docker available there) -- confirmed with the user, who will
+# run this on their own machine. The native local-process mode
+# (src/experiments/run_single.py, used by the test suite and experiment
+# runner) does not require Docker and is fully verified.
+#
+# Usage:
+#   docker compose up --build
+#   # then, from the host: python3 -m src.experiments.runner --enable-real-actions
+#   # pointed at APP_PORT/DEPENDENCY_PORT below via config.yaml overrides.
+services:
+  dependency:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["uvicorn", "src.app.dependency_service:app", "--host", "0.0.0.0", "--port", "8002"]
+    environment:
+      - SELF_HEALING_TEST_MODE=1
+    ports:
+      - "8002:8002"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["uvicorn", "src.app.main_service:app", "--host", "0.0.0.0", "--port", "8001"]
+    environment:
+      - SELF_HEALING_TEST_MODE=1
+      - DEPENDENCY_URL=http://dependency:8002
+    ports:
+      - "8001:8001"
+    depends_on:
+      - dependency

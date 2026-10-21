@@ -1,0 +1,31 @@
+{
+  "dataset_identifier": "local_app_telemetry_pooled_normal_sessions",
+  "feature_names": [
+    "mem_mb",
+    "mem_mb__lag1",
+    "mem_mb__roll_mean5",
+    "mem_mb__rate_of_change",
+    "cpu_percent",
+    "cpu_percent__lag1",
+    "cpu_percent__roll_mean5",
+    "cpu_percent__rate_of_change",
+    "work_latency_ms",
+    "work_latency_ms__lag1",
+    "work_latency_ms__roll_mean5",
+    "work_latency_ms__rate_of_change",
+    "work_success__roll_mean5"
+  ],
+  "lookback_window": 5,
+  "n_sessions": 4,
+  "n_training_rows": 336,
+  "threshold": 0.12636625751667874,
+  "threshold_percentile": 99,
+  "threshold_method": "percentile_of_training_scores_no_labels",
+  "random_seed": 42,
+  "model_type": "sklearn.ensemble.IsolationForest",
+  "notes": [
+    "Trained once on 4 independent normal-operation telemetry sessions (336 rows pooled), each from a freshly started application instance -- NOT retrained per experiment run.",
+    "No fault labels exist for this telemetry; threshold is NOT F1-tuned (unlike the offline datasets).",
+    "Superseded the original per-run warmup design after it was found to be unreliable (see results/reports/limitations_report.md item 8)."
+  ]
+}

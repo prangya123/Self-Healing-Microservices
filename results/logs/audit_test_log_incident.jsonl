@@ -1,0 +1,10 @@
+{"ts": 1792559953.1696231, "run_id": "test_log_incident", "event": "incident_logged", "reason": "ambiguous anomaly", "diagnostics": {}}
+{"ts": 1792560215.648494, "run_id": "test_log_incident", "event": "incident_logged", "reason": "ambiguous anomaly", "diagnostics": {}}
+{"ts": 1792561408.5496042, "run_id": "test_log_incident", "event": "incident_logged", "reason": "ambiguous anomaly", "diagnostics": {}}
+{"ts": 1792562138.633597, "run_id": "test_log_incident", "event": "incident_logged", "reason": "ambiguous anomaly", "diagnostics": {}}
+{"ts": 1792563114.776917, "run_id": "test_log_incident", "event": "incident_logged", "reason": "ambiguous anomaly", "diagnostics": {}}
+{"ts": 1792563323.307874, "run_id": "test_log_incident", "event": "incident_logged", "reason": "ambiguous anomaly", "diagnostics": {}}
+{"ts": 1792566004.008998, "run_id": "test_log_incident", "event": "incident_logged", "reason": "ambiguous anomaly", "diagnostics": {}}
+{"ts": 1792566034.759553, "run_id": "test_log_incident", "event": "incident_logged", "reason": "ambiguous anomaly", "diagnostics": {}}
+{"ts": 1792566247.214895, "run_id": "test_log_incident", "event": "incident_logged", "reason": "ambiguous anomaly", "diagnostics": {}}
+{"ts": 1792566387.0163388, "run_id": "test_log_incident", "event": "incident_logged", "reason": "ambiguous anomaly", "diagnostics": {}}
