@@ -1,5 +1,5 @@
 # AI-Driven Self-Healing in Cloud-Native Microservices
-# Copy Rights
+# Copyright
 # Author: Prangya Parmita Kar
 
 Research codebase for a dissertation evaluating whether AI-driven self-healing
